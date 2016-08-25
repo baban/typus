@@ -1,8 +1,11 @@
 module Admin::Resources::DataTypes::DatetimeHelper
 
   def table_datetime_field(attribute, item)
-    if field = item.send(attribute)
-      I18n.localize(field, format: item.class.typus_date_format(attribute))
+    if (data = item.send(attribute)).present?
+      truncate(data)
+      I18n.localize(data, format: item.class.typus_date_format(attribute))
+    else
+      mdash
     end
   end
 
