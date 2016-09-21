@@ -11,7 +11,7 @@ class Admin::ResourcesHelperTest < ActiveSupport::TestCase
   setup do
     @expected = [
       'helpers/admin/entries/search',
-      { hidden_filters: {} }
+      { hidden_filters: {}, :placeholder=>"Title" }
     ]
   end
 
@@ -49,7 +49,7 @@ class Admin::ResourcesHelperTest < ActiveSupport::TestCase
     parameters = { published: 'true', user_id: '1' }
     expected = [
       'helpers/admin/entries/search',
-      { hidden_filters: { published: 'true', user_id: '1' } }
+      { hidden_filters: { published: 'true', user_id: '1' }, :placeholder=>"Title" }
     ]
     assert_equal expected, admin_search(Entry, parameters)
   end
