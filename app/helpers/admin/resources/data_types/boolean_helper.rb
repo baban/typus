@@ -1,8 +1,8 @@
 module Admin::Resources::DataTypes::BooleanHelper
 
   def display_boolean(item, attribute)
-    if (status = item.send(attribute).to_s).present?
-      item.class.typus_boolean(attribute).rassoc(status).first
+    if (field = item.send(attribute).to_s).present?
+      item.class.typus_boolean(attribute).rassoc(field).first
     else
       mdash
     end

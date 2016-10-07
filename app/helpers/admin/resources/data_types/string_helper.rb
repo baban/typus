@@ -1,8 +1,8 @@
 module Admin::Resources::DataTypes::StringHelper
 
   def display_string(item, attribute)
-    if (data = item.send(attribute)).present?
-      data
+    if (field = item.send(attribute)).present?
+      field
     else
       mdash
     end
@@ -26,7 +26,7 @@ module Admin::Resources::DataTypes::StringHelper
   end
 
   def table_string_field(attribute, item)
-    (raw_content = item.send(attribute)).present? ? raw_content : mdash
+    display_string(item, attribute)
   end
 
   alias_method :table_decimal_field, :table_string_field

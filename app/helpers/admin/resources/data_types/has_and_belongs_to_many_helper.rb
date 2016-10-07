@@ -5,7 +5,7 @@ module Admin::Resources::DataTypes::HasAndBelongsToManyHelper
   end
 
   def table_has_and_belongs_to_many_field(attribute, item)
-    item.send(attribute).map(&:to_label).join(', ')
+    display_has_and_belongs_to_many(item, attribute)
   end
 
   alias_method :table_has_many_field, :table_has_and_belongs_to_many_field
