@@ -74,7 +74,7 @@ module Admin::Resources::DataTypes::BelongsToHelper
 
   def build_label_text_for_belongs_to(klass, html_options, options)
     if html_options[:disabled] == true
-      t('typus.labels.read_only')
+      I18n.t('typus.labels.read_only')
     elsif admin_user.can?('create', klass) && !headless_mode?
       build_add_new_for_belongs_to(klass, options)
     end
@@ -85,7 +85,7 @@ module Admin::Resources::DataTypes::BelongsToHelper
     html_options['data-controls-modal'] = "modal-from-dom-#{options[:attribute]}"
     html_options['url'] = "/admin/#{klass.to_resource}/new?_popup=true"
 
-    link_to t('typus.buttons.add'), { anchor: html_options['data-controls-modal'] }, html_options
+    link_to I18n.t('typus.buttons.add'), { anchor: html_options['data-controls-modal'] }, html_options
   end
 
 end

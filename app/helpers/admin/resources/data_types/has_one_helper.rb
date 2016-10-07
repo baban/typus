@@ -30,7 +30,7 @@ module Admin::Resources::DataTypes::HasOneHelper
         _popup: true,
       }
 
-      link_to t('typus.buttons.add'), default_options.merge(options), { class: 'iframe_with_page_reload' }
+      link_to I18n.t('typus.buttons.add'), default_options.merge(options), { class: 'iframe_with_page_reload' }
     end
   end
 
