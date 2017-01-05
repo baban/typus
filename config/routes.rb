@@ -1,5 +1,10 @@
-Rails.application.routes.draw do
+module Typus
+  # Your code goes here...
+  class Engine < ::Rails::Engine
+  end
+end
 
+Typus::Engine.routes.draw do
   routes_block = lambda do
 
     dashboard = Typus.subdomain ? '/dashboard' : '/admin/dashboard'
@@ -33,14 +38,17 @@ Rails.application.routes.draw do
       post "#{_resource}(/:action(/:id))(.:format)", controller: _resource
     end
 
-  end
+  end.call
+end
 
+Rails.application.routes.draw do
   if Typus.subdomain
     constraints :subdomain => Typus.subdomain do
-      namespace :admin, path: '', &routes_block
+      #namespace :admin, path: '', &routes_block
+      mount Typus::Engine => "/"
     end
   else
-    scope 'admin', {module: :admin, as: 'admin'}, &routes_block
+    mount Typus::Engine => "/admin"
+    # scope 'admin', {module: :admin, as: 'admin'}, &routes_block
   end
-
 end
