@@ -31,7 +31,10 @@ class ActiveRecord::Base
     if respond_to?(:name) && name.present?
       name
     else
-      [self.class, id].join('#')
+      model_name = I18n.t(
+        "activerecord.models.#{self.class.name.underscore}",
+        default: self.class.name)
+      [model_name, id].join('#')
     end
   end
 
