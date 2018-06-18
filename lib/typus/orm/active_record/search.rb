@@ -32,7 +32,7 @@ module Typus
         end
 
         def build_my_joins(params)
-          query_params = params.to_h.dup
+          query_params = params.dup.permit!.to_h
           query_params.reject! { |k, _| !model_relationships.keys.include?(k.to_sym) }
           query_params.map { |k, _| k.to_sym }
         end
