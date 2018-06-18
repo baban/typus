@@ -35,6 +35,7 @@ gem 'ckeditor-rails'
 
 # Alternative authentication
 gem 'devise'
+gem 'jquery-rails'
 
 # Asset Management
 gem 'dragonfly', '~> 1.0.12'
