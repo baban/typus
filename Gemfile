@@ -12,7 +12,7 @@ gem 'sass-rails', '~> 5.0.6'
 gem 'uglifier'
 
 # Use CoffeeScript for .js.coffee assets and views
-gem 'coffee-rails', '~> 4.2.1'
+gem 'coffee-rails'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -34,7 +34,7 @@ gem 'rails-trash'
 gem 'ckeditor-rails'
 
 # Alternative authentication
-gem 'devise', '~> 4.2.0'
+gem 'devise'
 
 # Asset Management
 gem 'dragonfly', '~> 1.0.12'
