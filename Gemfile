@@ -31,10 +31,10 @@ gem 'pg', '~> 0.18.4'
 gem 'acts_as_list', github: 'typus/acts_as_list'
 gem 'acts_as_tree'
 gem 'rails-permalink', '~> 1.0.0'
-gem 'rails-trash', github: 'fesplugas/rails-trash'
+gem 'rails-trash'
 
 # Rich Text Editor
-gem 'ckeditor-rails', github: 'fesplugas/rails-ckeditor'
+gem 'ckeditor-rails'
 
 # Alternative authentication
 gem 'devise', '~> 3.5.6'
