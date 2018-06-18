@@ -1,18 +1,4 @@
 GIT
-  remote: git://github.com/fesplugas/rails-ckeditor.git
-  revision: 63607310b8bce76f8d959994d62379a96c7fdadc
-  specs:
-    ckeditor-rails (0.0.6)
-      rails
-
-GIT
-  remote: git://github.com/fesplugas/rails-trash.git
-  revision: b963ba367d76a3c33a0f6b69368057bfe20ec873
-  specs:
-    rails-trash (5.0.0)
-      rails (~> 5.0)
-
-GIT
   remote: git://github.com/typus/acts_as_list.git
   revision: 602b965df0e8bd0c2a2ab55f5b7850ed226012e9
   specs:
@@ -85,6 +71,8 @@ GEM
       json (>= 1.7)
       mime-types (>= 1.16)
       mimemagic (>= 0.3.0)
+    ckeditor-rails (0.0.5)
+      rails (>= 3.X)
     climate_control (0.0.3)
       activesupport (>= 3.0)
     cliver (0.3.2)
@@ -193,6 +181,8 @@ GEM
       loofah (~> 2.0)
     rails-permalink (1.0.0)
       rails (>= 3.0.0)
+    rails-trash (2.0.0)
+      rails (>= 3.0.0)
     railties (5.0.0)
       actionpack (= 5.0.0)
       activesupport (= 5.0.0)
@@ -238,7 +228,7 @@ DEPENDENCIES
   acts_as_list!
   acts_as_tree
   carrierwave (~> 0.11.2)
-  ckeditor-rails!
+  ckeditor-rails
   coffee-rails (~> 4.2.1)
   devise (~> 4.2.0)
   dragonfly (~> 1.0.12)
@@ -252,10 +242,10 @@ DEPENDENCIES
   rack-cache
   rails-controller-testing
   rails-permalink (~> 1.0.0)
-  rails-trash!
+  rails-trash
   sass-rails (~> 5.0.6)
   typus!
   uglifier
 
 BUNDLED WITH
-   1.12.5
+   1.16.2
